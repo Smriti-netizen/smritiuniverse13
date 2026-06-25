@@ -9,7 +9,7 @@ const responses: Record<string, string> = {
   skills:
     "Python · Java · Golang · FastAPI · Kafka · Pulsar · Docker · Kubernetes · LangGraph · LangChain",
   hobbies: "Painting, watching movies, photography.",
-  contact: `Email: ${social.email}<br/>LinkedIn: ${social.linkedin}`,
+  contact: `Email: <a href="mailto:${social.email}" target="_blank" rel="noopener noreferrer" class="underline decoration-[var(--magenta)]/40 underline-offset-2 hover:text-[var(--magenta-deep)]">${social.email}</a><br/>GitHub: <a href="${social.github}" target="_blank" rel="noopener noreferrer" class="underline decoration-[var(--magenta)]/40 underline-offset-2 hover:text-[var(--magenta-deep)]">${social.github}</a><br/>LinkedIn: <a href="${social.linkedin}" target="_blank" rel="noopener noreferrer" class="underline decoration-[var(--magenta)]/40 underline-offset-2 hover:text-[var(--magenta-deep)]">${social.linkedin}</a><br/>X: <a href="${social.x}" target="_blank" rel="noopener noreferrer" class="underline decoration-[var(--magenta)]/40 underline-offset-2 hover:text-[var(--magenta-deep)]">${social.x}</a>`,
 };
 
 type TerminalLine = {

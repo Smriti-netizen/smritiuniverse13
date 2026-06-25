@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
-import { OpeningSplash } from "@/components/OpeningSplash";
 import { SiteBackground } from "@/components/SiteBackground";
+import { SiteShell } from "@/components/SiteShell";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -47,10 +47,11 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <SiteBackground />
-        <OpeningSplash />
-        <Nav />
-        {children}
-        <Footer />
+        <SiteShell>
+          <Nav />
+          {children}
+          <Footer />
+        </SiteShell>
       </body>
     </html>
   );

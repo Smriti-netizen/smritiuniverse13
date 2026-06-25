@@ -1,5 +1,6 @@
 "use client";
 
+import { ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { contentCardClass, FlowerDecor } from "@/components/FlowerCorners";
 import { SectionSplit } from "@/components/SectionSplit";
@@ -42,14 +43,25 @@ function ExperienceCard({
       </div>
       <ul className="font-inter relative z-[1] text-[0.9rem] leading-[1.75] text-[var(--ink-soft)]">
         {role.bullets.map((bullet) => (
-          <li key={bullet} className="relative mb-2 pl-[18px]">
+          <li key={bullet.text} className="relative mb-2 pl-[18px]">
             <span
               className="absolute left-0 top-0 text-[1.3rem] leading-none text-[var(--coral)]"
               aria-hidden="true"
             >
               ›
             </span>
-            {bullet}
+            {bullet.text}
+            {bullet.href ? (
+              <a
+                href={bullet.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View LinkedIn post about Order Details revamp"
+                className="ml-1.5 inline-flex align-middle text-[var(--ink-soft)] transition hover:text-[var(--magenta-deep)]"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            ) : null}
           </li>
         ))}
       </ul>

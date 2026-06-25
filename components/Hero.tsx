@@ -76,33 +76,33 @@ export function Hero() {
               ))}
             </div>
 
-            <div className="mt-7 flex gap-4">
+            <div className="relative z-20 mt-7 flex gap-4">
               <a
                 href={social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className={`flex h-11 w-11 items-center justify-center rounded-full ${frostedSurfaceClass} text-[var(--ink-soft)] transition hover:-translate-y-0.5 hover:border-[var(--magenta)] hover:bg-[var(--magenta)] hover:text-[var(--cream)]`}
+                className={`relative z-20 flex h-11 w-11 items-center justify-center rounded-full ${frostedSurfaceClass} text-[var(--ink-soft)] transition hover:-translate-y-0.5 hover:border-[var(--magenta)] hover:bg-[var(--magenta)] hover:text-[var(--cream)]`}
               >
-                <GitHubIcon className="h-[18px] w-[18px]" />
+                <GitHubIcon className="pointer-events-none h-[18px] w-[18px]" />
               </a>
               <a
                 href={social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className={`flex h-11 w-11 items-center justify-center rounded-full ${frostedSurfaceClass} text-[var(--ink-soft)] transition hover:-translate-y-0.5 hover:border-[var(--magenta)] hover:bg-[var(--magenta)] hover:text-[var(--cream)]`}
+                className={`relative z-20 flex h-11 w-11 items-center justify-center rounded-full ${frostedSurfaceClass} text-[var(--ink-soft)] transition hover:-translate-y-0.5 hover:border-[var(--magenta)] hover:bg-[var(--magenta)] hover:text-[var(--cream)]`}
               >
-                <LinkedInIcon className="h-[18px] w-[18px]" />
+                <LinkedInIcon className="pointer-events-none h-[18px] w-[18px]" />
               </a>
               <a
                 href={social.x}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X"
-                className={`flex h-11 w-11 items-center justify-center rounded-full ${frostedSurfaceClass} text-[var(--ink-soft)] transition hover:-translate-y-0.5 hover:border-[var(--magenta)] hover:bg-[var(--magenta)] hover:text-[var(--cream)]`}
+                className={`relative z-20 flex h-11 w-11 items-center justify-center rounded-full ${frostedSurfaceClass} text-[var(--ink-soft)] transition hover:-translate-y-0.5 hover:border-[var(--magenta)] hover:bg-[var(--magenta)] hover:text-[var(--cream)]`}
               >
-                <XIcon className="h-[18px] w-[18px]" />
+                <XIcon className="pointer-events-none h-[18px] w-[18px]" />
               </a>
             </div>
           </Reveal>
