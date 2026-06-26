@@ -16,8 +16,11 @@ export function SendFlowersSection() {
   }, [showFlowers]);
 
   function handleClick() {
-    setBurstKey((key) => key + 1);
-    setShowFlowers(true);
+    setShowFlowers(false);
+    window.requestAnimationFrame(() => {
+      setBurstKey((key) => key + 1);
+      setShowFlowers(true);
+    });
   }
 
   return (

@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { FLOWER_EMOJIS } from "@/data/flowers";
 
 const FLOWERS = FLOWER_EMOJIS;
@@ -52,18 +54,24 @@ type FallingFlowersProps = {
 };
 
 export function FallingFlowers({ active, burst = false }: FallingFlowersProps) {
-  if (!active) return null;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!active || !mounted) return null;
 
   const petals = burst ? [...baseConfig, ...extraBurst] : baseConfig;
 
-  return (
+  return createPortal(
     <div
-      className="pointer-events-none fixed inset-0 z-[100] overflow-hidden"
+      className="pointer-events-none fixed inset-0 z-[200] overflow-hidden"
       aria-hidden="true"
     >
       {petals.map((petal, index) => (
         <motion.span
-          key={index}
+          key={`${petal.left}-${petal.delay}-${index}`}
           className="absolute top-0 select-none"
           style={{
             left: petal.left,
@@ -84,6 +92,7 @@ export function FallingFlowers({ active, burst = false }: FallingFlowersProps) {
           {petal.emoji}
         </motion.span>
       ))}
-    </div>
+    </div>,
+    document.body,
   );
 }
